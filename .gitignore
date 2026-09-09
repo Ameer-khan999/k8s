@@ -1,0 +1,58 @@
+# ==========================================
+# ☁️ CLOUD & DEVOPS (GCP, Terraform, K8s)
+# ==========================================
+# Terraform local state and plugins
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+
+# Google Cloud Specific
+*.json
+.gcp/
+credentials/
+access_token.txt
+Terraform_accessKeys.xlsx
+
+# Kubernetes / Helm
+.kube/
+kubeconfig
+charts/*/charts/
+charts/*/tmp/
+
+# ==========================================
+# 🍃 JAVA & SPRING BOOT
+# ==========================================
+target/
+*.class
+*.jar
+*.war
+.idea/
+.vscode/
+
+# ==========================================
+# 🤖 AI & MACHINE LEARNING
+# ==========================================
+__pycache__/
+venv/
+.venv/
+*.h5
+*.pth
+*.pkl
+data/
+datasets/
+
+# ==========================================
+# 🖥️ WINDOWS SYSTEM FILES
+# ==========================================
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ==========================================
+#OTHER
+# ==========================================
+*.docx
+*.gitkeep
