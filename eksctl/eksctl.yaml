@@ -1,5 +1,7 @@
 #Simple cluster configuration
-#eksctl create cluster --cobfig-file=eksctl.yaml
+#eksctl create cluster --config-file=eksctl.yaml
+#eksctl delete cluster --region=us-east-1 --name=roboshop
+#aws eks update-kubeconfig --region us-east-1 --name roboshop
 
 
 apiVersion: eksctl.io/v1alpha5
@@ -9,6 +11,6 @@ metadata:
   region: us-east-1
 managedNodeGroups:
   - name: managed
-    instanceType: ["c3.large","c4.large","c5.large","c5d.large","c5n.large","c5a.large"]
-    desiredCapacity: 2
+    instanceTypes: ["t3.micro"]  # Free Tier eligible instance type
+    desiredCapacity: 1           # Stays within 750 hours/month
     spot: true
