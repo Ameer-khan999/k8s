@@ -24,10 +24,13 @@ kubectl delete svc --all-namespaces --all
 
 # 2. Delete all PVCs to release EBS volumes
 kubectl delete pvc --all-namespaces --all
+
 Once those resources finish terminating, run the cluster deletion command:
 
-Bash
+# Delete cluster
 eksctl delete cluster -f cluster.yaml
+
+# Verify
 How to Verify Zero Remaining Resources
 After the command finishes, check these two areas in the AWS Management Console to confirm nothing is incurring costs:
 
