@@ -28,7 +28,7 @@ kubectl delete pvc --all-namespaces --all
 Once those resources finish terminating, run the cluster deletion command:
 
 # Delete cluster
-eksctl delete cluster -f cluster.yaml
+eksctl delete cluster -f eksctl.yaml or eksctl delete cluster --region=us-east-1 --name=roboshop
 
 # Verify
 How to Verify Zero Remaining Resources
