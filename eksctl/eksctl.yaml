@@ -2,6 +2,7 @@
 #eksctl create cluster --config-file=eksctl.yaml
 #eksctl delete cluster --region=us-east-1 --name=roboshop
 #aws eks update-kubeconfig --region us-east-1 --name roboshop
+-------------------------------------------------------------------------------
 
 
 apiVersion: eksctl.io/v1alpha5
