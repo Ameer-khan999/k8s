@@ -12,5 +12,5 @@ metadata:
 managedNodeGroups:
   - name: managed
     instanceTypes: ["t3.micro"]  # Free Tier eligible instance type
-    desiredCapacity: 1           # Stays within 750 hours/month
+    desiredCapacity: 2           # Stays within 750 hours/month
     spot: true
