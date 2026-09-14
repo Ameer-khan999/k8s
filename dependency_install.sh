@@ -5,3 +5,4 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker ec2-user
 sudo usermod -aG wheel ec2-user
 docker images
+#
