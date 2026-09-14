@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-for-pod
+  labels:
+    project: roboshop
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    envFrom:
+    -  configMapRef:
+        name: configmap-env
+
