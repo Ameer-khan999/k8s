@@ -12,6 +12,6 @@ metadata:
   region: us-east-1
 managedNodeGroups:
   - name: managed
-    instanceTypes: ["t3.micro"]  # Free Tier eligible instance type
+    instanceTypes: ["t3.small"]  # Free Tier eligible instance type
     desiredCapacity: 2           # Stays within 750 hours/month
     spot: true
