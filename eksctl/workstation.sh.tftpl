@@ -56,8 +56,9 @@ chmod 600 /home/ec2-user/.aws/config
 
 # Clone eksctl repo and create EKS cluster
 cd /home/ec2-user
-sudo -u ec2-user git clone https://github.com/daws-90s/eksctl.git
-cd eksctl
+#sudo -u ec2-user git clone https://github.com/daws-90s/eksctl.git
+sudo -u ec2-user git clone https://github.com/Ameer-khan999/k8s
+cd /k8s/eksctl
 sudo -u ec2-user /usr/local/bin/eksctl create cluster -f eksctl.yaml
 
 # Authenticate kubectl with the cluster
