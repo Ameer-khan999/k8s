@@ -5,6 +5,7 @@ metadata:
   name: pod-nginx
   labels:
     project: roboshop
+    component: frontend
 spec:
   containers:
   - name: nginx-container
