@@ -4,5 +4,5 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 sudo systemctl enable --now docker
 sudo usermod -aG docker ec2-user
 sudo usermod -aG wheel ec2-user
-docker images
+sudo docker images
 #
