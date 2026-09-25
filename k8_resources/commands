@@ -41,3 +41,4 @@ kubectl logs <pod-name> -c <container-name> ( if pod has mul continers)
 kubectl logs -f <pod-name> -c <container-name> ( live logs)
 kubectl logs <pod-name> -c <container-name> --previous ( to check failed previous logs)
 kubectl logs <pod-name> --tail=50 ( to see most recent by avoiding spamming)
+watch -n 1 kubectl get po
