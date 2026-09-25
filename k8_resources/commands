@@ -1,4 +1,4 @@
-# Writing and remembering yaml files
+# Writing and remembering yaml filesG
  Always remember 4 things,
  
 1. apiVersion
@@ -35,4 +35,9 @@ kubectl get deployment
 kubectl cp index.html pod-name:/usr/share/nginx/html/index/html
 kubectl get ns or namespace
 kubectl exec -it pod-name -- bash ( for single)
-kubectl exec -it pod-name -c container-name -- bash ( if pod contains multiple containers and if we want to connect one of them)
+kubectl exec -it pod-name -c container-name -- bash ( if pod contaiGns multiple containers and if we want to connect one of them)
+kubectl logs <pod-name>
+kubectl logs <pod-name> -c <container-name> ( if pod has mul continers)
+kubectl logs -f <pod-name> -c <container-name> ( live logs)
+kubectl logs <pod-name> -c <container-name> --previous ( to check failed previous logs)
+kubectl logs <pod-name> --tail=50 ( to see most recent by avoiding spamming)
