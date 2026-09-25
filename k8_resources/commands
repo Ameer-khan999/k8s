@@ -1,0 +1,38 @@
+# Writing and remembering yaml files
+ Always remember 4 things,
+ 
+1. apiVersion
+
+   -> Every k8s resource has a version. example, pods, services has v1 and sets like replicasest, deployment has apps/v1
+   -> type kubectl api-resources to see the api versions
+
+2. kind
+
+   -> kind is nothing but which type of k8s resource that we need like Pod, Service, Replicaset etc
+   -> Again, type kubectl api-resources to see the kinds
+
+3. metadata
+
+   -> metadata containes name of the kind, such as pod name, service name etc.. you can give names as you like.
+   -> metadata also contains labels, uisng labels we can group all the resources like if service and pod contains same lables thyen service attaches pods to      its endpoints.
+
+4. spec
+
+   -> spec denotes what type of specification we need, like if we mention kind as replicaset, than we need 3 replicas and that we will mention in spec, alos      containers, we will mention contianer image name, conatiner name here.
+
+Tip: If you cant remember this just remember ---> A King makes spicy_food
+
+--- ( if you want to write a multiple kinds within a same yaml file? separate with the three --- 
+
+kubectl apply -f filename.yaml
+kubectl delete -f filename.yaml
+kubectl get nodes
+kubectl get pods or po
+kubectl get pods -o wide ( to get ip details of pods)
+kubectl get service or svc
+kubectl get replicaset or rs
+kubectl get deployment
+kubectl cp index.html pod-name:/usr/share/nginx/html/index/html
+kubectl get ns or namespace
+kubectl exec -it pod-name -- bash ( for single)
+kubectl exec -it pod-name -c container-name -- bash ( if pod contains multiple containers and if we want to connect one of them)
