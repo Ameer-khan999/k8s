@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicaset-demo
+  labels:
+    project: roboshop
+    topic: replicasets
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: roboshop
+      topic: replicasets
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        topic: replicasets
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
