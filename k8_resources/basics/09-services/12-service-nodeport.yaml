@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-nodeport-service
+  labels:
+    project: roboshop
+    environment: dev
+spec:
+  type: NodePort
+  selector: # Service uses below lables to select the pod endpoints (podip:containerPort)
+    project: roboshop
+    component: frontend
+  ports:
+  - protocol: TCP
+    port: 80 # Service Port
+    targetPort: 80 # Container Port
+    nodePort: 31080
+
