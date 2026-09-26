@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: roboshop
+  labels:
+    project: roboshop
+    env: dev
+    component: mongodb
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: roboshop
+      env: dev
+      component: mongodb
+      tier: backend
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        env: dev
+        component: mongodb
+        tier: backend
+    spec:
+      containers:
+      - name: mongodb
+        image: joindevops/mongodb:4.0.0
+# Not reuired any ports to mention
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+  namespace: roboshop
+  labels:
+    project: roboshop
+    env: dev
+    component: mongodb
+    tier: backend
+spec:
+  selector:
+    project: roboshop
+    env: dev
+    component: mongodb
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 27017 #service port
+    targetPort: 27017 # contianer port
