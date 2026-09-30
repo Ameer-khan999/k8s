@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ameer-hostpath
+  labels:
+    env: practise-hostpath
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: practise-hostpath
+  template:
+    metadata:
+      name: nginx-hostpath-pod
+      labels:
+        env: practise-hostpath
+    spec:
+      containers:
+      - name: nginx-hp
+        image: nginx
+        volumeMounts:
+        - name: storage-hp
+          mountPath: /var/logs/nginx-ameer
+      volumes:
+      - name: storage-hp
+        hostPath:
+          path: /tmp/nginx-logs
+          type: DirectoryOrCreate

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ameer-emptydir
+  labels:
+    env: practise-emptyDir
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: practise-emptyDir
+  template: #Pod Config
+    metadata:
+      labels:
+        env: practise-emptyDir
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts: #Container level
+        - name: storage
+          mountPath: /var/logs/nginx-ameer
+      volumes: #Pod Level
+      - name: storage
+        emptyDir:
+          sizeLimit: 500Mi
